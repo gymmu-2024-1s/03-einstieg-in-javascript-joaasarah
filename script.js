@@ -29,8 +29,13 @@ export function aufgabe01(args) {
     // damit wir nicht so viele Klammern schreiben müssen.
     const currentElement = input[i]
 
-    // Hier wird das aktuelle Zeichen ans Ende der Resultat-Liste angehängt.
-    result.push(currentElement)
+    if (currentElement === "e") {
+      //do nothing
+    } else if (currentElement === "E") {
+      //auch E ignorieren
+    } else {
+      result.push(currentElement)
+    }
   }
 
   // Hier geben wir das Resultat zurück, und machen einen Text daraus.
@@ -38,3 +43,21 @@ export function aufgabe01(args) {
 }
 
 linkupExerciseHandler("[data-click=aufgabe01]", aufgabe01)
+
+export function aufgabe02(args) {
+  const input = args
+  const result = [] // Das ist die Resultatliste
+
+  // läuft Zeichen für Zeichen über den ganzen Text.
+  for (let i = 0; i < input.length; i++) {
+    const currentElement = input[i]
+
+    const upperCaseVersion = currentElement.toUpperCase()
+
+    result.push(upperCaseVersion)
+  }
+
+  return result.join("")
+}
+
+linkupExerciseHandler("[data-click=aufgabe02]", aufgabe02)
