@@ -61,3 +61,51 @@ export function aufgabe02(args) {
 }
 
 linkupExerciseHandler("[data-click=aufgabe02]", aufgabe02)
+
+export function aufgabe03(args) {
+  const input = args
+  const result = []
+
+  let count = 0
+  for (let i = 0; i < input.length; i++) {
+    const currentElement = input[i]
+    if (currentElement === "e") {
+      count = count + 1
+    } else if (currentElement === "e") {
+      count = count + 1
+    } else if (currentElement === "E") {
+      count++
+    }
+  }
+  return count
+}
+linkupExerciseHandler("[data-click=aufgabe03]", aufgabe03)
+
+export function aufgabe05(args) {
+  const input = args
+
+  let hasUpperCaseLetter = false
+
+  for (let i = 0; i < input.length; i++) {
+    const currentElement = input[i]
+    const upperCaseVersion = currentElement.toUpperCase()
+
+    if (currentElement === ".") {
+      //ignorieren
+    } else if (currentElement === " ") {
+    } else if (currentElement === upperCaseVersion) {
+      hasUpperCaseLetter = true
+    }
+  }
+  return hasUpperCaseLetter
+}
+linkupExerciseHandler("[data-click=aufgabe05]", aufgabe05)
+
+export function aufgabe06(args) {
+  const input = args
+  const result = []
+}
+export function aufgabe06(args) {
+  const input = args
+  const result = []
+}
