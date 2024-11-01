@@ -88,7 +88,7 @@ export function aufgabe05(args) {
 
   for (let i = 0; i < input.length; i++) {
     const currentElement = input[i]
-    const upperCaseVersion = currentElement.toUpperCase()
+    const upperCaseVersion = currentElement.toUpperCase() // Wandle in einen Grossbuchstaben um
 
     if (currentElement === ".") {
       //ignorieren
@@ -104,13 +104,31 @@ linkupExerciseHandler("[data-click=aufgabe05]", aufgabe05)
 export function aufgabe04(args) {
   const input = args
   const result = []
-}
-for (let i = 0; i < input.length; i++) {
-  const currentElement = input[i]
-  let count = 0
-  if (currentElement === ".") {
-    count = count + 1
+
+  for (let i = 0; i < input.length; i++) {
+    const currentElement = input[i]
+    let count = 0
+    if (currentElement === " ") {
+      count = count + 1
+    }
   }
+  return count + 1
 }
-return count + 1
 linkupExerciseHandler("[data-click=aufgabe04]", aufgabe04)
+
+export function aufgabe08(args) {
+  const input = args
+  const result = []
+  for (let i = 0; i < input.length; i++) {
+    const currentElement = input[i]
+
+    if (currentElement === "e") {
+      // do nothing
+      result.push(3) // 3 ersetzt "e"
+    } else {
+      result.push(currentElement)
+    }
+  }
+  return result.join("")
+}
+linkupExerciseHandler("[data-click=aufgabe08]", aufgabe08)
