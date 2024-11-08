@@ -112,6 +112,8 @@ export function aufgabe04(args) {
       count = count + 1
     }
   }
+
+  // Wir geben das Resultat aus
   return count + 1
 }
 linkupExerciseHandler("[data-click=aufgabe04]", aufgabe04)
@@ -132,3 +134,20 @@ export function aufgabe08(args) {
   return result.join("")
 }
 linkupExerciseHandler("[data-click=aufgabe08]", aufgabe08)
+
+export function aufgabe 11(args) {
+  const input = args
+
+  //Erstelle eine Variable um den ASCII- Code zu speichern
+  let ascii Code = null
+
+  //Speichere den ASCII-Code vom ersten Zeichen in der Variable
+  ascii Code = input.charCodeAt(0)
+
+
+
+  //Gib den ASCII-Code zurück
+  return asciiCode
+}
+
+linkupExerciseHandler("[data-click=aufgabe11]", aufgabe11)
