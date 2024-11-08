@@ -135,16 +135,14 @@ export function aufgabe08(args) {
 }
 linkupExerciseHandler("[data-click=aufgabe08]", aufgabe08)
 
-export function aufgabe 11(args) {
+export function aufgabe11(args) {
   const input = args
 
   //Erstelle eine Variable um den ASCII- Code zu speichern
-  let ascii Code = null
+  let asciiCode = null
 
   //Speichere den ASCII-Code vom ersten Zeichen in der Variable
-  ascii Code = input.charCodeAt(0)
-
-
+  asciiCode = input.charCodeAt(0)
 
   //Gib den ASCII-Code zurück
   return asciiCode
