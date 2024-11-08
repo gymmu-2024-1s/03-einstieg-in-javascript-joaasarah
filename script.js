@@ -149,3 +149,44 @@ export function aufgabe11(args) {
 }
 
 linkupExerciseHandler("[data-click=aufgabe11]", aufgabe11)
+
+export function aufgabe06(args) {
+  const input = args
+  const result = []
+
+  let count = 0
+  for (let i = 0; i < input.length; i++) {
+    const currentElement = input[i]
+    //Wandle in einen Grossbuchstaben um
+    const upperCaseVersion = currentElement.toUpperCase()
+    //Wandle in einen Kleinbuchstaben um
+    const lowerCaseVersion = currentElement.toLowerCase()
+    //Prüfe ob groß und klein gleich sind
+    if (upperCaseVersion === lowerCaseVersion) {
+         //gib true zurück
+         return true
+    }
+  }
+  //gib falsch zurück
+  return false
+}
+
+linkupExerciseHandler("[data-click=aufgabe06]", aufgabe06)
+
+export function aufgabe07(args) {
+  const input = args
+  const result = []
+
+  for (let i = 0; i < input.length; i++) {
+    const currentElement = input[i]
+    if(currentElement === "u") {
+      //Prüfe ob das nächste Element ein n ist
+      const nextElement = input[i + 1]
+      if (nextElement === "n") {
+          //prüfe ob das dritte Element ein d ist
+          const thirdElement = input[i + 2]
+          if (thirdElement === "d") {
+      }
+
+
+}
