@@ -220,3 +220,44 @@ export function aufgabe09(args) {
   // Gib falsch zuruck
   return false
 }
+
+linkupExerciseHandler("[data-click=aufgabe09]", aufgabe09)
+
+export function aufgabe12(args) {
+  const input = args
+  const result = []
+  for (let i = 0; i < input.length; i++) {
+    if (currentElement === "e") {
+    }
+  }
+}
+//
+
+
+
+export function aufgabe16(args) {
+  const input = "Einfach$nur Text"
+  const result1 = []
+  const result2 = []
+
+  let dollarFound = false
+  //left dollar ist true
+  //right dollar ist false
+
+  for (let i = 0; i < input.length; i++) {
+  result1.push(currentElement)
+  }else {
+    result2.push(currentElement)
+
+  }
+  if (currentElement === "$") {
+    dollarFound = true
+  }
+  console.log(result1)
+  //gibt uns das Zeichen zurück die wir gerade betrachten
+  console.log(result2)
+}
+
+
+
+}
