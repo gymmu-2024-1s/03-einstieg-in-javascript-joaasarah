@@ -163,8 +163,8 @@ export function aufgabe06(args) {
     const lowerCaseVersion = currentElement.toLowerCase()
     //Prüfe ob groß und klein gleich sind
     if (upperCaseVersion === lowerCaseVersion) {
-         //gib true zurück
-         return true
+      //gib true zurück
+      return true
     }
   }
   //gib falsch zurück
@@ -173,20 +173,31 @@ export function aufgabe06(args) {
 
 linkupExerciseHandler("[data-click=aufgabe06]", aufgabe06)
 
-export function aufgabe07(args) {
-  const input = args
-  const result = []
+export function aufgabe07(args) {}
+const input = args
+const result = []
 
-  for (let i = 0; i < input.length; i++) {
-    const currentElement = input[i]
-    if(currentElement === "u") {
-      //Prüfe ob das nächste Element ein n ist
-      const nextElement = input[i + 1]
-      if (nextElement === "n") {
-          //prüfe ob das dritte Element ein d ist
-          const thirdElement = input[i + 2]
-          if (thirdElement === "d") {
-      }
+for (let i = 0; i < input.length; i++) {
+  const currentElement = input[i]
+}
+if (currentElement === "u") {
+  //Prüfe ob das nächste Element ein n ist
+  const nextElement = input[i + 1]
+}
+if (nextElement === "n") {
+  //prüfe ob das dritte Element ein d ist
+  const thirdElement = input[i + 2]
+  if (thirdElement === "d") {
+    //gib true zurück
+  }
+  return true
+  //wenn kein der dritte Element ein d ist, gib false zurück
 
+  //gib false zurück
+  return false
+  linkupExerciseHandler("[data-click=aufgabe07]", aufgabe07)
+}
 
+//
+{
 }
