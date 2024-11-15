@@ -227,11 +227,23 @@ export function aufgabe12(args) {
   const input = args
   const result = []
   for (let i = 0; i < input.length; i++) {
+    const currentElement = input[i]
+
     if (currentElement === "e") {
+      result.push(i)
+    } else if (currentElement === "E") {
+      result.push (i)
+
+    } else {
+        result.push (-1)
     }
   }
+
+  return result.join("")
 }
+linkupExerciseHandler("[data-click=aufgabe12]", aufgabe12)
 //
+
 
 
 
@@ -246,8 +258,8 @@ export function aufgabe16(args) {
 
   for (let i = 0; i < input.length; i++) {
   result1.push(currentElement)
-  }else {
-    result2.push(currentElement)
+  }
+} else {
 
   }
   if (currentElement === "$") {
@@ -256,8 +268,4 @@ export function aufgabe16(args) {
   console.log(result1)
   //gibt uns das Zeichen zurück die wir gerade betrachten
   console.log(result2)
-}
-
-
-
 }
