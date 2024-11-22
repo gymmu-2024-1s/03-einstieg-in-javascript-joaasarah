@@ -173,34 +173,32 @@ export function aufgabe06(args) {
 
 linkupExerciseHandler("[data-click=aufgabe06]", aufgabe06)
 
-export function aufgabe07(args) {}
-const input = args
-const result = []
+export function aufgabe07(args) {
+  const input = args
+  const result = []
 
-for (let i = 0; i < input.length; i++) {
-  const currentElement = input[i]
-}
-if (currentElement === "u") {
-  //Prüfe ob das nächste Element ein n ist
-  const nextElement = input[i + 1]
-}
-if (nextElement === "n") {
-  //prüfe ob das dritte Element ein d ist
-  const thirdElement = input[i + 2]
-  if (thirdElement === "d") {
-    //gib true zurück
+  for (let i = 0; i < input.length; i++) {
+    const currentElement = input[i]
+
+    if (currentElement === "u") {
+      //Prüfe ob das nächste Element ein n ist
+      const nextElement = input[i + 1]
+    }
+    if (nextElement === "n") {
+      //prüfe ob das dritte Element ein d ist
+      const thirdElement = input[i + 2]
+      if (thirdElement === "d") {
+        //gib true zurück
+      }
+      return true
+      //wenn kein der dritte Element ein d ist, gib false zurück
+    }
   }
-  return true
-  //wenn kein der dritte Element ein d ist, gib false zurück
-
   //gib false zurück
   return false
-  linkupExerciseHandler("[data-click=aufgabe07]", aufgabe07)
 }
+linkupExerciseHandler("[data-click=aufgabe07]", aufgabe07)
 
-//
-{
-}
 export function aufgabe09(args) {
   const input = args
   const result = []
@@ -232,10 +230,9 @@ export function aufgabe12(args) {
     if (currentElement === "e") {
       result.push(i)
     } else if (currentElement === "E") {
-      result.push (i)
-
+      result.push(i)
     } else {
-        result.push (-1)
+      result.push(-1)
     }
   }
 
@@ -244,28 +241,45 @@ export function aufgabe12(args) {
 linkupExerciseHandler("[data-click=aufgabe12]", aufgabe12)
 //
 
-
-
-
 export function aufgabe16(args) {
-  const input = "Einfach$nur Text"
+  const input = args
   const result1 = []
   const result2 = []
-
   let dollarFound = false
   //left dollar ist true
   //right dollar ist false
 
   for (let i = 0; i < input.length; i++) {
-  result1.push(currentElement)
+    const currentElement = input[i]
+    if (dollarFound === false) {
+      result1.push(currentElement)
+    } else {
+      result2.push(currentElement)
+    }
+    if (currentElement === "$") {
+      dollarFound = true
+    }
   }
-} else {
+  return [result1.join(""), result2.join("")]
+}
 
+linkupExerciseHandler("[data-click=aufgabe16]", aufgabe16)
+
+//gibt uns das Zeichen zurück die wir gerade betrachten
+
+export function aufgabe13(args) {
+  const input = args
+  const result = []
+
+  let pos = -1
+  for (let i = 0; i < input.length; i++) {
+    const currentElement = input[i]
+    //Suche die Position des letzten `e`s in einem Text.
+    if (currentElement === "e") {
+      pos = i
+    }
   }
-  if (currentElement === "$") {
-    dollarFound = true
-  }
-  console.log(result1)
-  //gibt uns das Zeichen zurück die wir gerade betrachten
-  console.log(result2)
+  return pos
+
+  linkupExerciseHandler("[data-click=aufgabe13]", aufgabe13)
 }
