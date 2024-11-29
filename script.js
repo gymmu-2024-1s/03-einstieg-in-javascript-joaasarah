@@ -407,3 +407,34 @@ export function aufgabe25(args) {
   return result.join("")
 }
 linkupExerciseHandler("[data-click=aufgabe25]", aufgabe25)
+
+export function aufgabe20(args) {
+  const input = args
+  const result = []
+  for (let i = 0; i < input.length; i++) {
+    const currentElement = input[i]
+    // Prüfen Sie ob nach jedem `.` ein Leerschlag kommt.
+    if (currentElement === ".") {
+      if (input[i + 1] === " ") {
+        return true
+      }
+      return false
+    }
+  }
+}
+linkupExerciseHandler("[data-click=aufgabe20]", aufgabe20)
+
+export function aufgabe21(args) {
+  const input = args
+  const result = []
+
+  for (let i = input.length - 1; i >= 0; i--) {
+    const currentElement = input[i]
+    // Kehren Sie die Eingabe um.
+    result.push(currentElement)
+  }
+
+  return result.join("")
+}
+
+linkupExerciseHandler("[data-click=aufgabe21]", aufgabe21)
