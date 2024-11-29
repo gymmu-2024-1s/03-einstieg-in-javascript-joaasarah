@@ -88,15 +88,13 @@ export function aufgabe05(args) {
 
   for (let i = 0; i < input.length; i++) {
     const currentElement = input[i]
-    const upperCaseVersion = currentElement.toUpperCase() // Wandle in einen Grossbuchstaben um
+    const ascii = currentElement.charCodeAt(0)
 
-    if (currentElement === ".") {
-      //ignorieren
-    } else if (currentElement === " ") {
-    } else if (currentElement === upperCaseVersion) {
+    if (ascii >= 65 && ascii <= 90) {
       hasUpperCaseLetter = true
     }
   }
+
   return hasUpperCaseLetter
 }
 linkupExerciseHandler("[data-click=aufgabe05]", aufgabe05)
@@ -179,22 +177,18 @@ export function aufgabe07(args) {
 
   for (let i = 0; i < input.length; i++) {
     const currentElement = input[i]
-
+    //Prüfe ob das aktuelle Element ein u ist
     if (currentElement === "u") {
       //Prüfe ob das nächste Element ein n ist
-      const nextElement = input[i + 1]
-    }
-    if (nextElement === "n") {
-      //prüfe ob das dritte Element ein d ist
-      const thirdElement = input[i + 2]
-      if (thirdElement === "d") {
-        //gib true zurück
+      if (input[i + 1] === "n") {
+        //Prüfe ob das dritte Element ein d ist
+        if (input[i + 2] === "d") {
+          // das ist das richtige Element
+          return true
+        }
       }
-      return true
-      //wenn kein der dritte Element ein d ist, gib false zurück
     }
   }
-  //gib false zurück
   return false
 }
 linkupExerciseHandler("[data-click=aufgabe07]", aufgabe07)
@@ -211,11 +205,11 @@ export function aufgabe09(args) {
     // Zähle count um eins hoch
     count = count + 1
   }
-  // Wenn count genau glaich 6 ist, dann gib wahr zrück
+  // Wenn count genau glaich 6 ist, dann gib wahr zurück
   if (count === 6) {
     return true
   }
-  // Gib falsch zuruck
+  // Gib falsch zurück
   return false
 }
 
@@ -227,16 +221,14 @@ export function aufgabe12(args) {
   for (let i = 0; i < input.length; i++) {
     const currentElement = input[i]
 
+    //Suche die Position des letzten `e`s in einem Text.
+
     if (currentElement === "e") {
-      result.push(i)
-    } else if (currentElement === "E") {
-      result.push(i)
-    } else {
-      result.push(-1)
+      return i
     }
   }
 
-  return result.join("")
+  return -1
 }
 linkupExerciseHandler("[data-click=aufgabe12]", aufgabe12)
 //
@@ -280,6 +272,82 @@ export function aufgabe13(args) {
     }
   }
   return pos
-
-  linkupExerciseHandler("[data-click=aufgabe13]", aufgabe13)
 }
+linkupExerciseHandler("[data-click=aufgabe13]", aufgabe13)
+
+export function aufgabe10(args) {
+  const input = args
+  const result = []
+
+  //Teste ob das erste Zeichen ein # ist
+  if (input[0] === "#") {
+    //return true
+  } else {
+    return false
+  }
+
+  // Teste ob input genau 7 Zeichen lang ist
+  if (input.length !== 7) {
+    //return true
+  } else {
+    return false
+  }
+
+  for (let i = 1; i < input.length; i++) {
+    const currentElement = input[i]
+    const ascii = currentElement.charCodeAt(0)
+
+    // Teste ob ascii zwischen 48 und 57 ist
+    if (ascii >= 48 && ascii <= 57) {
+      //return true
+    } else {
+      return false
+    }
+
+    // Teste ob ascii zwischen 65 und 70 ist
+    if (ascii >= 65 && ascii <= 70) {
+      //return true
+    } else {
+      return false
+    }
+  }
+
+  return true
+}
+
+export function aufgabe22(args) {
+  const input = args
+  const result = []
+
+  let toggle = false
+
+  for (let i = 0; i < input.length; i++) {
+    const currentElement = input[i]
+
+    if (toggle === false) {
+      result.push("_")
+    } else {
+      result.push(currentElement)
+    }
+
+    if (currentElement === "k") {
+      toggle = true
+    }
+  }
+  return result.join("")
+}
+linkupExerciseHandler("[data-click=aufgabe22]", aufgabe22)
+
+export function aufgabe23(args) {
+  const input = args
+  const result = []
+  // Hänge das erste Zeichen vorne und hinten an die Eingabe an
+  for (let i = 1; i < input.length; i++) {
+    const currentElement = input[i]
+    result.push(currentElement)
+  }
+  result.push(input[0])
+
+  return result.join("")
+}
+linkupExerciseHandler("[data-click=aufgabe23]", aufgabe23)
