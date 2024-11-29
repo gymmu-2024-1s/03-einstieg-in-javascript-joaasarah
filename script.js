@@ -354,3 +354,56 @@ export function aufgabe23(args) {
   return result.join("")
 }
 linkupExerciseHandler("[data-click=aufgabe23]", aufgabe23)
+
+export function aufgabe24(args) {
+  // Vertausche das erste und das letzte Zeichen
+  const input = args
+  const result = []
+
+  for (let i = 0; i < input.length; i++) {
+    const currentElement = input[i]
+    if (i === 0) {
+      result.push(input[input.length - 1])
+    } else if (i === input.length - 1) {
+      result.push(input[0])
+    } else {
+      result.push(currentElement)
+    }
+  }
+  return result.join("")
+}
+linkupExerciseHandler("[data-click=aufgabe24]", aufgabe24)
+
+export function aufgabe25(args) {
+  const input = args
+  const result = []
+  if (input.length % 2 === 0) {
+    const middleIndex = Math.floor(input.length / 2) - 1
+    const middlePlusOneIndex = middleIndex + 1
+
+    for (let i = 0; i < input.length; i++) {
+      const currentElement = input[i]
+
+      if (i === middleIndex || i === middlePlusOneIndex) {
+        //lass das Element weg
+      } else {
+        result.push(currentElement)
+      }
+    }
+  } else {
+    // Bitte erstelle mir eine Variable, die das mittle Zeichen speichert
+    const middleIndex = Math.floor(input.length / 2)
+    for (let i = 0; i < input.length; i++) {
+      const currentElement = input[i]
+
+      if (i === middleIndex) {
+        //lass das Element weg
+      } else {
+        result.push(currentElement)
+      }
+    }
+  }
+
+  return result.join("")
+}
+linkupExerciseHandler("[data-click=aufgabe25]", aufgabe25)
