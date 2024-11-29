@@ -341,12 +341,15 @@ linkupExerciseHandler("[data-click=aufgabe22]", aufgabe22)
 export function aufgabe23(args) {
   const input = args
   const result = []
+  const firstelement = input[0]
+  result.push(firstelement)
+
   // Hänge das erste Zeichen vorne und hinten an die Eingabe an
   for (let i = 1; i < input.length; i++) {
     const currentElement = input[i]
     result.push(currentElement)
   }
-  result.push(input[0])
+  result.push(firstelement)
 
   return result.join("")
 }
