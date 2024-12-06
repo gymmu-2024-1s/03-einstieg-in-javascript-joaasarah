@@ -341,21 +341,24 @@ linkupExerciseHandler("[data-click=aufgabe22]", aufgabe22)
 export function aufgabe23(args) {
   const input = args
   const result = []
-  //Bitte erstelle mir eine neue Variable die das erste Zeichen von Input speichert
+  // Bitte erstelle mir eine neue variable die das erste zeichen von input speichert
+  const firstElement = input[0]
 
-  const firstelement = input[0]
-  //Bitte hänge das erste Element an result an
-  result.push(firstelement)
+  // Bitte hänge das erste element an result an
+  result.push(firstElement)
 
-  // Hänge das erste Zeichen vorne und hinten an die Eingabe an
-  for (let i = 1; i < input.length; i++) {
+  for (let i = 0; i < input.length; i++) {
     const currentElement = input[i]
+    // hänge current element an result an
     result.push(currentElement)
   }
-  result.push(firstelement)
+
+  // bitte hänge das erste element nochmals ganz hinten an result an¨
+  result.push(firstElement)
 
   return result.join("")
 }
+
 linkupExerciseHandler("[data-click=aufgabe23]", aufgabe23)
 
 export function aufgabe24(args) {
