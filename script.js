@@ -439,8 +439,26 @@ export function aufgabe21(args) {
     // Kehren Sie die Eingabe um.
     result.push(currentElement)
   }
-
   return result.join("")
 }
 
 linkupExerciseHandler("[data-click=aufgabe21]", aufgabe21)
+
+export function aufgabe26(args) {
+  const input = args
+  const result = []
+
+  for (let i = 0; i < input.length; i++) {
+    const currentElement = input[i]
+    // Kehren Sie die Eingabe um.
+    result.push(currentElement)
+  }
+  return result.join("")
+
+  export function aufgabe(args) {
+    const input = args
+    const result = []
+
+    return result.join("")
+  }
+}
