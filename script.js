@@ -91,6 +91,7 @@ export function aufgabe05(args) {
     const ascii = currentElement.charCodeAt(0)
 
     if (ascii >= 65 && ascii <= 90) {
+      // Wenn es zwischen 65 und 90 ist, stimmt es
       hasUpperCaseLetter = true
     }
   }
@@ -447,17 +448,30 @@ linkupExerciseHandler("[data-click=aufgabe21]", aufgabe21)
 export function aufgabe26(args) {
   const input = args
   const result = []
-  // Vertausche das erste und das letzte Zeichen
-  for (let i = 0; i < input.length; i++) {
-    const currentElement = input[i]
-    if (i === 0) {
-      result.push(input[input.length - 1])
-    } else if (i === input.length - 1) {
-      result.push(input[0])
-    } else {
-      result.push(currentElement)
-    }
+
+  //Bitte erstelle eine neue Variable, die dass erste Element speichert
+  const firstElement = input[0]
+
+  //Bitte erstelle eine neue Variable, die dass zweite Element speichert
+  const secondElement = input[1]
+
+  // Wenn der ASCII-Wert des ersten Elements grösser ist als des zweiten, dann vertausche die Elemente
+  if (firstElement.charCodeAt(0) > secondElement.charCodeAt(0)) {
+    // vertausche die Elemente
+    result.push(secondElement)
+    result.push(firstElement)
+  } else {
+    result.push(firstElement)
+    result.push(secondElement)
   }
+
+  for (let i = 2; i < input.length; i++) {
+    const currentElement = input[i]
+
+    result.push(currentElement)
+  }
+
   return result.join("")
 }
+
 linkupExerciseHandler("[data-click=aufgabe26]", aufgabe26)
