@@ -447,18 +447,17 @@ linkupExerciseHandler("[data-click=aufgabe21]", aufgabe21)
 export function aufgabe26(args) {
   const input = args
   const result = []
-
+  // Vertausche das erste und das letzte Zeichen
   for (let i = 0; i < input.length; i++) {
     const currentElement = input[i]
-    // Kehren Sie die Eingabe um.
-    result.push(currentElement)
+    if (i === 0) {
+      result.push(input[input.length - 1])
+    } else if (i === input.length - 1) {
+      result.push(input[0])
+    } else {
+      result.push(currentElement)
+    }
   }
   return result.join("")
-
-  export function aufgabe(args) {
-    const input = args
-    const result = []
-
-    return result.join("")
-  }
 }
+linkupExerciseHandler("[data-click=aufgabe26]", aufgabe26)
