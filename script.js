@@ -525,6 +525,15 @@ export function aufgabe27(args) {
     return false
   }
 }
+for (let i = 0; i < input.length; i++) {
+  const currentElement = input[i]
+  const asciiCode = currentElement.charCodeAt(0)
+  //Testen sie, ob eine Eingabe eine Zahl ist
+  if (48 <= asciiCode && asciiCode <= 57) {
+  } else {
+    return false
+  }
+}
 
 export function BubbleSort(args) {
   const text = args
