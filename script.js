@@ -502,7 +502,17 @@ export function aufgabe26(args) {
 
 linkupExerciseHandler("[data-click=aufgabe26]", aufgabe26)
 
- export function aufgabe19(args) {
-   const input = args
-   const result = []
-   for (let i = 0; i < input.length; i++) {
+export function aufgabe19(args) {
+  const input = args
+  const result = []
+  for (let i = 0; i < input.length; i++) {
+    const currentElement = input[i]
+    //Jedes Zeichen  wird doppelt
+    result.push(currentElement)
+    result.push(currentElement)
+  }
+
+  return result.join("") //Jedes Element wird hinzugefügt
+}
+
+linkupExerciseHandler("[data-click=aufgabe19]", aufgabe19)
