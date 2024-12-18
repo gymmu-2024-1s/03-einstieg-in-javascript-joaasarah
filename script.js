@@ -502,6 +502,26 @@ export function aufgabe26(args) {
 
 linkupExerciseHandler("[data-click=aufgabe26]", aufgabe26)
 
+export function aufgabe27(args) {
+  const input = args
+  const result = []
+
+  if (input.length === 0) {
+    return false
+  }
+  for (let i = 0; i < input.length; i++) {
+    const currentElement = input[i]
+    const asciiCode = currentElement.charCodeAt(0)
+    //Testen sie, ob eine Eingabe eine Zahl ist
+    if (48 <= asciiCode && asciiCode <= 57) {
+    } else {
+      return false
+    }
+  }
+  return true
+}
+linkupExerciseHandler("[data-click=aufgabe27]", aufgabe27)
+
 export function aufgabe19(args) {
   const input = args
   const result = []
@@ -516,27 +536,6 @@ export function aufgabe19(args) {
 }
 
 linkupExerciseHandler("[data-click=aufgabe19]", aufgabe19)
-
-export function aufgabe27(args) {
-  const input = args
-  const result = []
-
-  if (input.length === 0) {
-    return false
-  }
-}
-for (let i = 0; i < input.length; i++) {
-  const currentElement = input[i]
-  const asciiCode = currentElement.charCodeAt(0)
-  //Testen sie, ob eine Eingabe eine Zahl ist
-  if (48 <= asciiCode && asciiCode <= 57) {
-  } else {
-    return false
-  }
-}
-return true
-
-linkupExerciseHandler("[data-click=aufgabe27]", aufgabe27)
 
 export function BubbleSort(args) {
   const text = args
