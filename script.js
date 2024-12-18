@@ -534,6 +534,9 @@ for (let i = 0; i < input.length; i++) {
     return false
   }
 }
+return true
+
+linkupExerciseHandler("[data-click=aufgabe27]", aufgabe27)
 
 export function BubbleSort(args) {
   const text = args
