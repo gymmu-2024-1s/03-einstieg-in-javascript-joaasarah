@@ -62,21 +62,30 @@ export function aufgabe02(args) {
 
 linkupExerciseHandler("[data-click=aufgabe02]", aufgabe02)
 
+// Die Funktion 'aufgabe03' zählt die Vorkommen des Buchstabens 'e' und 'E' in der Eingabe
 export function aufgabe03(args) {
+  // 'input' erhält die Eingabedaten
   const input = args
+  // 'result' erhaltet die Ergebnisliste
   const result = []
 
+  // Zähler für die Anzahl der 'e' und 'E'
   let count = 0
+  //Schleife, um jedes Element im 'input' zu durchlaufen
   for (let i = 0; i < input.length; i++) {
+    // Aktuelles Element wird in der Variablen 'currentElement' gespeichert
     const currentElement = input[i]
+    // Überprüfe, ob das aktuelle Element ein kleines 'e' ist
     if (currentElement === "e") {
-      count = count + 1
+      count = count + 1 // Zähle das Vorkommen von 'e'
     } else if (currentElement === "e") {
       count = count + 1
+      // Überprüfe, ob das aktuelle Element ein großes 'E' ist
     } else if (currentElement === "E") {
       count++
     }
   }
+  // Rückgabe des Zählwerts (Gesamtanzahl der 'e' und 'E')
   return count
 }
 linkupExerciseHandler("[data-click=aufgabe03]", aufgabe03)
@@ -539,7 +548,7 @@ linkupExerciseHandler("[data-click=aufgabe19]", aufgabe19)
 
 export function aufgabe14(args) {
   const input = args
-  const result = [] // das ist die Resultatliste
+  const result = [] // das ist die Resultatliste die wir erstellen wollen
 
   for (let i = 0; i < input.length; i++) {
     const currentElement = input[i]
