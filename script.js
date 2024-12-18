@@ -512,7 +512,7 @@ export function aufgabe27(args) {
   for (let i = 0; i < input.length; i++) {
     const currentElement = input[i]
     const asciiCode = currentElement.charCodeAt(0)
-    //Testen sie, ob eine Eingabe eine Zahl ist
+    //Testen Sie, ob das Zeichen eine Zahl ist
     if (48 <= asciiCode && asciiCode <= 57) {
     } else {
       return false
@@ -536,6 +536,8 @@ export function aufgabe19(args) {
 }
 
 linkupExerciseHandler("[data-click=aufgabe19]", aufgabe19)
+
+export function aufgabe14(args) {}
 
 export function BubbleSort(args) {
   const text = args
