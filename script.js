@@ -537,21 +537,24 @@ export function aufgabe19(args) {
 
 linkupExerciseHandler("[data-click=aufgabe19]", aufgabe19)
 
-export function aufgabe14(args) {}
-const input = args
-const result = [] // Das ist die Resultatliste der Aufgabe
+export function aufgabe14(args) {
+  const input = args
+  const result = [] // das ist die Resultatliste
 
-for (let i = 0; i < input.length; i++) {
-  const currentElement = input[i]
-  //Suche die Position des dritten `e`s in einem Text.
-  if (currentElement === "e") {
-    result.push(i)
+  for (let i = 0; i < input.length; i++) {
+    const currentElement = input[i]
+    //Suche die Position des dritten `e`s in einem Text.
+    if (currentElement === "e") {
+      result.push(i)
+    }
+    if (result.length === 3) {
+      return i
+    }
   }
-  if (result.length === 3) {
-    return i
-  }
+  return -1
 }
-return -1
+
+linkupExerciseHandler("[data-click=aufgabe14]", aufgabe14)
 
 export function BubbleSort(args) {
   const text = args
