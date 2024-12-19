@@ -724,35 +724,38 @@ export function InsertionSort(args) {
 linkupExerciseHandler("[data-click=InsertionSort]", InsertionSort)
 
 export function BucketSort(args) {
-  const text = args // Eingabetext
-  const buckets = Array(256)
-    .fill(null)
-    .map(() => []) // 256 Buckets für ASCII-Zeichen
+  const text = args // Der Eingabetext
+  const list = text.split("") // Den Text in eine Liste von Zeichen umwandeln
+  const buckets = []
 
-  // Die Zeichen nach ihren ASCII-Werten in die Buckets legen
-  for (let i = 0; i < text.length; i++) {
-    const charCode = text.charCodeAt(i) // ASCII-Wert des Zeichens
-    buckets[charCode].push(text[i]) // Zeichen in den entsprechenden Bucket legen
-  }
+  // Erstelle 26 Buckets, einen für jeden Buchstaben (a bis z)
+  for (let i = 0; i < 26; i++) {
+    buckets.push([])
 
-  // Nun die Buckets sortieren und alle Zeichen wieder zusammenführen
-  let sortedText = ""
-  for (let i = 0; i < buckets.length; i++) {
-    if (buckets[i].length > 0) {
-      // Die Zeichen im aktuellen Bucket sortieren
-      buckets[i].sort()
-      sortedText += buckets[i].join("")
+    // Verteile die Zeichen in die entsprechenden Buckets (basierend auf ASCII-Wert)
+    for (let i = 0; i < list.length; i++) {
+      const currentElement = list[i] // Das aktuelle Zeichen
+      const charCode = currentElement.toLowerCase().charCodeAt(0) // ASCII-Wert des Zeichens (klein geschrieben)
+
+      if (charCode >= 97 && charCode <= 122) {
+        buckets[charCode - 97].push(currentElement) // Füge das Zeichen in den richtigen Bucket ein
+      }
     }
+
+    // Sortiere jedes Bucket
+    for (let i = 0; i < buckets.length; i++) {
+      buckets[i].sort() // Sortiere das Array (die Zeichen) innerhalb jedes Buckets
+    }
+
+    // Füge die sortierten Buckets wieder zusammen
+    let result = ""
+    for (let i = 0; i < buckets.length; i++) {
+      result += buckets[i].join("") // Alle Zeichen aus den Buckets zusammenfügen
+    }
+
+    // Gib den sortierten Text zurück
+    return result
   }
 
-  // LinkupExerciseHandler wird hier verwendet, um das Ergebnis an den DOM zu senden
-  linkupExerciseHandler("[data-click=BucketSort]", sortedText) // Hier wird das Ergebnis weitergegeben
-
-  return sortedText // Gibt den sortierten Text zurück (optional)
+  linkupExerciseHandler("[data-click=BucketSort]", BucketSort)
 }
-
-// Anwendung der Funktion
-linkupExerciseHandler(
-  "[data-click=BucketSort]",
-  BucketSort("einfach nur text..."),
-)
