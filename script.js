@@ -726,40 +726,39 @@ export function InsertionSort(args) {
 }
 
 linkupExerciseHandler("[data-click=InsertionSort]", InsertionSort)
-
 export function BucketSort(args) {
   const text = args // Der Eingabetext
   const list = text.split("") // Den Text in eine Liste von Zeichen umwandeln
-  const buckets = []
+  const buckets = [] // Array für die Buckets, um die Zeichen zu speichern
 
-  // Erstelle 26 Buckets, einen für jeden Buchstaben (a bis z)
+  // Erstelle 26 Buckets (einen für jeden Buchstaben im Alphabet)
   for (let i = 0; i < 26; i++) {
-    buckets.push([])
-
-    // Verteile die Zeichen in die entsprechenden Buckets (basierend auf ASCII-Wert)
-    for (let i = 0; i < list.length; i++) {
-      const currentElement = list[i] // Das aktuelle Zeichen
-      const charCode = currentElement.toLowerCase().charCodeAt(0) // ASCII-Wert des Zeichens (klein geschrieben)
-
-      if (charCode >= 97 && charCode <= 122) {
-        buckets[charCode - 97].push(currentElement) // Füge das Zeichen in den richtigen Bucket ein
-      }
-    }
-
-    // Sortiere jedes Bucket
-    for (let i = 0; i < buckets.length; i++) {
-      buckets[i].sort() // Sortiere das Array (die Zeichen) innerhalb jedes Buckets
-    }
-
-    // Füge die sortierten Buckets wieder zusammen
-    let result = ""
-    for (let i = 0; i < buckets.length; i++) {
-      result += buckets[i].join("") // Alle Zeichen aus den Buckets zusammenfügen
-    }
-
-    // Gib den sortierten Text zurück
-    return result
+    buckets.push([]) // Füge leere Buckets hinzu
   }
 
-  linkupExerciseHandler("[data-click=BucketSort]", BucketSort)
+  // Verteile jedes Zeichen in den entsprechenden Bucket
+  for (let i = 0; i < list.length; i++) {
+    const currentElement = list[i] // Das aktuelle Zeichen
+    const bucketIndex = currentElement.charCodeAt(0) - 97 // Bestimme den Bucket-Index ('a' hat ASCII-Wert 97)
+
+    if (bucketIndex >= 0 && bucketIndex < 26) {
+      buckets[bucketIndex].push(currentElement) // Füge das Zeichen in den entsprechenden Bucket ein
+    }
+  }
+
+  // Sortiere jedes Bucket. Wir können die Array sort() Methode verwenden.
+  for (let i = 0; i < buckets.length; i++) {
+    buckets[i].sort() // Sortiere die Zeichen im aktuellen Bucket
+  }
+
+  // Kombiniere die sortierten Buckets zu einem endgültigen Ergebnis
+  let result = ""
+  for (let i = 0; i < buckets.length; i++) {
+    result += buckets[i].join("") // Füge die Zeichen jedes Buckets zu einem String zusammen
+  }
+
+  // Gib das sortierte Ergebnis zurück
+  return result
 }
+
+linkupExerciseHandler("[data-click=BucketSort]", BucketSort)
