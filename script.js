@@ -474,17 +474,20 @@ export function aufgabe20(args) {
 export function aufgabe25(args) {
   const input = args
   const result = []
+  // Überprüfe ob die Länge des Strings gerade oder ungerade ist
   if (input.length % 2 === 0) {
-    const middleIndex = Math.floor(input.length / 2) - 1
-    const middlePlusOneIndex = middleIndex + 1
+    //Wenn die Länge des Strings gerade ist, gebe den Index der beiden mittleren Elemente an
+    const middleIndex = Math.floor(input.length / 2) - 1 //Index des ersten mittleren Zeichens
+    const middlePlusOneIndex = middleIndex + 1 // Index des zweiten mittleren Zeichens
 
     for (let i = 0; i < input.length; i++) {
       const currentElement = input[i]
+      // Wenn der aktuelle 'Index' einer von den mittleren Elementen ist, lass es weg
 
       if (i === middleIndex || i === middlePlusOneIndex) {
         //lass das Element weg
       } else {
-        result.push(currentElement)
+        result.push(currentElement) //Füge alle anderen Zeichen zur 'result' Liste an
       }
     }
   } else {
