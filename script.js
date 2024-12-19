@@ -584,25 +584,30 @@ linkupExerciseHandler("[data-click=aufgabe27]", aufgabe27)
 
 export function aufgabe28(args) {
   const input = args
-  const result1 = []
-  const result2 = []
+  const result1 = [] // leere Liste, um die erste Zahl zu speichern
+  const result2 = [] // leere Liste, um die zweite Zahl zu speichern
 
-  let secondNum = false
+  let secondNum = false //Variable, um festzulegen ob die zweite Zahl gefunden wurde
 
   for (let i = 0; i < input.length; i++) {
     const currentElement = input[i]
-    const ascii = currentElement.charCodeAt(0)
-    // Testen Sie, ob in der Eingabe 2 Zahlen von einem Leerzeichen getrennt sind. Falls ja geben Sie die Summe als Ausgabe aus; sonst Fehlermeldung.
+    const ascii = currentElement.charCodeAt(0) //Der  ASCII-Wert des aktuellen Zeichens wird ermittelt.
+
     if (ascii >= 48 && ascii <= 57) {
+      // Überprüfe, ob das aktuelle Zeichen eine Zahl ist (ASCII-Werte für '0' bis '9' sind zwischen 48 und 57)
       if (secondNum === false) {
+        // Wenn es die erste Zahl ist, füge das Zeichen zu 'result1' hinzu
         result1.push(currentElement)
       } else {
+        // Wenn es die zweite Zahl ist, füge das Zeichen zu 'result2' hinzu
         result2.push(currentElement)
       }
     } else if (ascii === 32) {
-      secondNum = true
+      //Ist das Zeichen ein leerzeichen, ist die erste Zahl abgeschlossen
+      secondNum = true //Nun wurde die zweite Zahl erreicht
     } else {
-      return null
+      // Wenn das Zeichen weder eine Zahl noch ein Leerzeichen ist, gibt es eine ungültige Eingabe
+      return null // Rückgabe von null, wenn ein ungültiges Zeichen gefunden wird
     }
   }
 
