@@ -456,35 +456,39 @@ linkupExerciseHandler("[data-click=aufgabe24]", aufgabe24)
 export function aufgabe25(args) {
   const input = args
   const result = []
+  // Überprüfe, ob die Länge des Strings gerade oder ungerade ist
   if (input.length % 2 === 0) {
-    const middleIndex = Math.floor(input.length / 2) - 1
-    const middlePlusOneIndex = middleIndex + 1
+    // Wenn die Länge des Strings gerade ist, gebe den Index der beiden mittleren Elemente an
+    const middleIndex = Math.floor(input.length / 2) - 1 // Index des ersten mittleren Zeichens
+    const middlePlusOneIndex = middleIndex + 1 // Index des zweiten mittleren Zeichens
 
     for (let i = 0; i < input.length; i++) {
       const currentElement = input[i]
 
+      //wenn der aktuelle 'Index' einer von den mittleren Elementen ist, lasse es weg
+
       if (i === middleIndex || i === middlePlusOneIndex) {
-        //lass das Element weg
+        //lass das Element weg (übersprungen)
       } else {
-        result.push(currentElement)
+        result.push(currentElement) // Füge alle anderen Zeichen zur 'result' Liste hinzu
       }
     }
   } else {
     // Bitte erstelle mir eine Variable, die das mittle Zeichen speichert
-    const middleIndex = Math.floor(input.length / 2)
+    const middleIndex = Math.floor(input.length / 2) // Index des mittleren Zeichens
     for (let i = 0; i < input.length; i++) {
       const currentElement = input[i]
 
       if (i === middleIndex) {
-        //lass das Element weg
+        // Wenn der aktuelle Index das mittlere Element ist, lasse es weg
       } else {
-        result.push(currentElement)
+        result.push(currentElement) // Füge alle anderen Zeichen zur 'result' Liste hinzu
       }
     }
   }
-
-  return result.join("")
 }
+return result.join("")
+
 linkupExerciseHandler("[data-click=aufgabe25]", aufgabe25)
 
 export function aufgabe20(args) {
