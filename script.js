@@ -326,9 +326,9 @@ export function aufgabe13(args) {
 
   let pos = -1 //Die Variable 'pos' wird auf -1 gesetzt, um die Position des letzten 'e' zu speichern
   for (let i = 0; i < input.length; i++) {
-    const currentElement = input[i] // Das aktuelle zeichen wird in der Resultatliste gesopeichert
+    const currentElement = input[i] // Das aktuelle zeichen wird in der Resultatliste gespeichert
 
-    //// Wenn das aktuelle Zeichen ein 'e' ist, speichere die Position
+    // Wenn das aktuelle Zeichen ein 'e' ist, speichere die Position
 
     if (currentElement === "e") {
       pos = i //Setze 'pos' auf die aktuelle Position des 'e'.
@@ -378,27 +378,31 @@ export function aufgabe10(args) {
 
   return true
 }
+linkupExerciseHandler("[data-click=aufgabe10]", aufgabe10)
 
 export function aufgabe22(args) {
   const input = args
   const result = []
 
-  let toggle = false
+  let toggle = false //Eine Variable 'toggle', die den Zustand wechselt (false -> '_', true -> Originalzeichen).
 
   for (let i = 0; i < input.length; i++) {
     const currentElement = input[i]
 
+    // Wenn 'toggle' false ist, füge ein '_' in die Resultatliste ein
     if (toggle === false) {
       result.push("_")
     } else {
+      // Wenn 'toggle' true ist, füge das ursprüngliche Zeichen in die Resultatliste ein
       result.push(currentElement)
     }
 
+    // Wenn das aktuelle Zeichen ein 'k' ist, wechsle den Wert von 'toggle' (true)
     if (currentElement === "k") {
       toggle = true
     }
   }
-  return result.join("")
+  return result.join("") //Alle Elemente der Resultatliste werdn zusammengefügt
 }
 linkupExerciseHandler("[data-click=aufgabe22]", aufgabe22)
 
