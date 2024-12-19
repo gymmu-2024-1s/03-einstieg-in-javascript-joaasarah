@@ -654,6 +654,12 @@ export function aufgabe14(args) {
 
 linkupExerciseHandler("[data-click=aufgabe14]", aufgabe14)
 
+export function aufgabe15(args) {
+  const input = args
+  const result = []
+
+
+
 export function BubbleSort(args) {
   const text = args
   const list = text.split("") // Damit wandeln wir den Text in eine Liste um, das brauchen wir wenn wir Elemente vertauschen möchten.
