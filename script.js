@@ -642,3 +642,23 @@ export function BubbleSort(args) {
 }
 
 linkupExerciseHandler("[data-click=BubbleSort]", BubbleSort)
+
+export function InsertionSort(args) {
+  const text = args
+  const list = text.split("") // Damit wandeln wir den Text in eine Liste um, das brauchen wir wenn wir Elemente vertauschen 것.
+  for (let i = 1; i < list.length; i++) {
+    const currentElement = list[i]
+    let j = i - 1
+    while (j >= 0 && list[j].charCodeAt(0) > currentElement.charCodeAt(0)) {
+      const tmp = list[j + 1]
+      list[j + 1] = list[j]
+      list[j] = tmp
+      j--
+    }
+  }
+  const result = list.join("")
+
+  return result // Gibt den sortierten String zurück
+}
+
+linkupExerciseHandler("[data-click=InsertionSort]", InsertionSort)
