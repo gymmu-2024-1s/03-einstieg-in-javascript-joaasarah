@@ -272,15 +272,18 @@ export function aufgabe12(args) {
   const input = args
   const result = []
   for (let i = 0; i < input.length; i++) {
-    const currentElement = input[i]
+    const currentElement = input[i] // Das aktuelle Zeichen wird im String also in der Zahlenkette gespeichert
 
     //Suche die Position des letzten `e`s in einem Text.
 
+    //Prüfe ob das aktuelle Zeichen ein 'e' ist
     if (currentElement === "e") {
+      // Wenn 'e' gefunden wird, gib die aktuelle Position (Index) zurück
       return i
     }
   }
 
+  // Wenn kein 'e' gefunden wurde, gib -1 zurück
   return -1
 }
 linkupExerciseHandler("[data-click=aufgabe12]", aufgabe12)
