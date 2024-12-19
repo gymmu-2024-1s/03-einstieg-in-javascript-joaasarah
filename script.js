@@ -91,36 +91,45 @@ export function aufgabe03(args) {
 linkupExerciseHandler("[data-click=aufgabe03]", aufgabe03)
 
 export function aufgabe05(args) {
-  const input = args
+  // Aufgabe 5 überprüft, ob der Eingabestrang mindestens einen Großbuchstaben enthält
+  const input = args //input enthält die Eingabedaten
 
-  let hasUpperCaseLetter = false
+  let hasUpperCaseLetter = false // Definiere eine Variable, die überprüft ob ein Großbuchstabe vorhanden ist
 
   for (let i = 0; i < input.length; i++) {
+    // Aktuelles Zeichen wird in der Variablen 'currentElement' gespeichert
     const currentElement = input[i]
+    // Bestimme den ASCII-Wert des aktuellen Zeichens
     const ascii = currentElement.charCodeAt(0)
-
+    // Überprüfe, ob der ASCII-Wert im Bereich der Großbuchstaben liegt (65 bis       90)
     if (ascii >= 65 && ascii <= 90) {
       // Wenn es zwischen 65 und 90 ist, stimmt es
+      // Wenn ein Großbuchstabe gefunden wird, setze 'hasUpperCaseLetter' auf true
       hasUpperCaseLetter = true
     }
   }
-
+  // Rückgabe: Gibt true zurück, wenn ein Großbuchstabe gefunden wurde, andernfalls false
   return hasUpperCaseLetter
 }
 linkupExerciseHandler("[data-click=aufgabe05]", aufgabe05)
 
 export function aufgabe04(args) {
+  // Die Funktion 'aufgabe04' zählt die Anzahl der Wörter in einem String,
+  // wobei mehrere aufeinanderfolgende Leerzeichen ignoriert werden
   const input = args
   const result = []
 
-  // Wir filtern die Eingabe so, dass nur noch Buchstaben und Leerzeichen übrig bleiben
+  // Wir filtern die Eingabe so, dass nur noch Buchstaben (A-Z, a-z) und Leerzeichen übrig bleiben
   for (let i = 0; i < input.length; i++) {
     const currentElement = input[i]
     const ascii = currentElement.charCodeAt(0)
+    // Wenn das Zeichen ein Großbuchstabe (A-Z) ist, wird es in 'result' aufgenommen
     if (ascii >= 65 && ascii <= 90) {
       result.push(currentElement)
+      // Wenn das Zeichen ein Kleinbuchstabe (a-z) ist, wird es ebenfalls in 'result' aufgenommen
     } else if (ascii >= 97 && ascii <= 122) {
       result.push(currentElement)
+      // Wenn das Zeichen ein Leerzeichen ist (ASCII-Wert 32), wird es auch in 'result' aufgenommen
     } else if (ascii === 32) {
       result.push(currentElement)
     }
