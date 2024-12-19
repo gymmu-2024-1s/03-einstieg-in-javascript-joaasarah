@@ -185,15 +185,16 @@ export function aufgabe08(args) {
 linkupExerciseHandler("[data-click=aufgabe08]", aufgabe08)
 
 export function aufgabe11(args) {
+  // Die Funktion 'aufgabe11' gibt den ASCII-Code des ersten Zeichens eines Strings (zeichenkette) zurück
   const input = args
 
-  //Erstelle eine Variable um den ASCII- Code zu speichern
+  //Erstelle eine Variable um den ASCII-Code des ersten Zeichens zu speichern
   let asciiCode = null
 
-  //Speichere den ASCII-Code vom ersten Zeichen in der Variable
+  //Speichere den ASCII-Code des ersten Zeichens in der Variable "asciiCode"
   asciiCode = input.charCodeAt(0)
 
-  //Gib den ASCII-Code zurück
+  //Gib den ASCII-Code des ersten Zeichens zurück
   return asciiCode
 }
 
