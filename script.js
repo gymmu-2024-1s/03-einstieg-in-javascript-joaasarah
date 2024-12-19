@@ -588,9 +588,9 @@ export function aufgabe19(args) {
   const result = []
   for (let i = 0; i < input.length; i++) {
     const currentElement = input[i]
-    //Jedes Zeichen  wird doppelt
-    result.push(currentElement)
-    result.push(currentElement)
+    //Jedes Zeichen  wird doppelt hinzugefügt
+    result.push(currentElement) // Füge das Zeichen einmal hinzu
+    result.push(currentElement) // Füge das Zeichen ein zweites Mal hinzu
   }
 
   return result.join("") //Jedes Element wird hinzugefügt
