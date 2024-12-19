@@ -562,15 +562,20 @@ export function aufgabe27(args) {
   const input = args
   const result = []
 
+  // Wenn der Eingabestring leer ist, gib 'false' zurück
   if (input.length === 0) {
     return false
   }
   for (let i = 0; i < input.length; i++) {
     const currentElement = input[i]
+    // Hole den ASCII-Wert des aktuellen Zeichens
     const asciiCode = currentElement.charCodeAt(0)
     //Testen Sie, ob das Zeichen eine Zahl ist
+    //Überprüfe, ob der ASCII-Wert des Zeichens zwischen 48 (für '0') und 57 (für '9') liegt
     if (48 <= asciiCode && asciiCode <= 57) {
+      // Das Zeichen ist eine Zahl, nichts weiter tun
     } else {
+      // Wenn ein Zeichen keine Zahl ist, gib 'false' zurück
       return false
     }
   }
