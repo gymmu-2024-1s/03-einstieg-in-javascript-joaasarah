@@ -657,8 +657,26 @@ linkupExerciseHandler("[data-click=aufgabe14]", aufgabe14)
 export function aufgabe15(args) {
   const input = args
   const result = []
+  //Erstellt eine Variable, um zu erkennen, ob ein Leerzeichen (" ") im String gefunden wurde.
+  let leerzeichenErkannt = false
 
+  for (let i = 0; i < input.length; i++) {
+    //aktuelles Zeichen wird in current Element gespeichert
+    const currentElement = input[i]
 
+    if (currentElement === " ") {
+      // Falls Leerzeichen gefunden wurde, setzte die Variable 'Leerzeichen erkannt' auf true
+      leerzeichenErkannt = true
+    }
+    // Wenn noch kein Leerzeichen gefunden wurde, füge das Zeichen zum 'result' Array hinzu.
+    if (leerzeichenErkannt === false) {
+      result.push(currentElement)
+    }
+  }
+  // Wandelt das 'result' Array von Zeichen wieder in einen String um und gibt ihn zurück.
+  return result.join("")
+}
+linkupExerciseHandler("[data-click=aufgabe15]", aufgabe15)
 
 export function BubbleSort(args) {
   const text = args
