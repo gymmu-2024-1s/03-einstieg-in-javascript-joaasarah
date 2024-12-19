@@ -606,13 +606,15 @@ export function aufgabe14(args) {
     const currentElement = input[i]
     //Suche die Position des dritten `e`s in einem Text.
     if (currentElement === "e") {
-      result.push(i)
+      result.push(i) // Wenn es ein "e" ist, speichere die Position (Index) in der 'result' liste.
     }
+    // Wenn bereits drei "e"s gefunden wurden, gib die aktuelle Position (Index) zurück
     if (result.length === 3) {
-      return i
+      return i // Gibt den Index des dritten "e" zurück.
     }
   }
-  return -1
+  // Wenn weniger als drei "e"s gefunden wurden, gib -1 zurück
+  return -1 // Gibt -1 zurück, wenn das dritte "e" nicht gefunden wurde.
 }
 
 linkupExerciseHandler("[data-click=aufgabe14]", aufgabe14)
