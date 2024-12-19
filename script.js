@@ -587,7 +587,31 @@ export function aufgabe28(args) {
   const result1 = []
   const result2 = []
 
+  let secondNum = false
 
+  for (let i = 0; i < input.length; i++) {
+    const currentElement = input[i]
+    const ascii = currentElement.charCodeAt(0)
+    // Testen Sie, ob in der Eingabe 2 Zahlen von einem Leerzeichen getrennt sind. Falls ja geben Sie die Summe als Ausgabe aus; sonst Fehlermeldung.
+    if (ascii >= 48 && ascii <= 57) {
+      if (secondNum === false) {
+        result1.push(currentElement)
+      } else {
+        result2.push(currentElement)
+      }
+    } else if (ascii === 32) {
+      secondNum = true
+    } else {
+      return null
+    }
+  }
+
+  const num1 = parseInt(result1.join(""))
+  const num2 = parseInt(result2.join(""))
+  return num1 + num2
+}
+
+linkupExerciseHandler("[data-click=aufgabe28]", aufgabe28)
 
 export function aufgabe19(args) {
   const input = args
