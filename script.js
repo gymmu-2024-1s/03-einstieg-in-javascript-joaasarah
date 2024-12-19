@@ -499,23 +499,27 @@ export function aufgabe20(args) {
     // Prüfen Sie ob nach jedem `.` ein Leerschlag kommt.
     if (currentElement === ".") {
       if (input[i + 1] === " ") {
-        return true
+        return true // Gib 'true' zurück, wenn nach dem Punkt ein Leerzeichen kommt
       }
-      return false
+      return false // Gib 'false' zurück, wenn nach dem Punkt kein Leerzeichen kommt
     }
   }
 }
-linkupExerciseHandler("[data-click=aufgabe20]", aufgabe20)
+{
+  linkupExerciseHandler("[data-click=aufgabe20]", aufgabe20)
+}
 
 export function aufgabe21(args) {
   const input = args
   const result = []
 
   for (let i = input.length - 1; i >= 0; i--) {
-    const currentElement = input[i]
+    const currentElement = input[i] // Das aktuelle Zeichen (ab dem Ende der Liste) wird gespeichert.
+
     // Kehren Sie die Eingabe um.
     result.push(currentElement)
   }
+  // Gib das umgekehrte Ergebnis als Liste zurück
   return result.join("")
 }
 
