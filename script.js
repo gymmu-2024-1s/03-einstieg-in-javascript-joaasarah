@@ -722,3 +722,37 @@ export function InsertionSort(args) {
 }
 
 linkupExerciseHandler("[data-click=InsertionSort]", InsertionSort)
+
+export function BucketSort(args) {
+  const text = args // Eingabetext
+  const buckets = Array(256)
+    .fill(null)
+    .map(() => []) // 256 Buckets für ASCII-Zeichen
+
+  // Die Zeichen nach ihren ASCII-Werten in die Buckets legen
+  for (let i = 0; i < text.length; i++) {
+    const charCode = text.charCodeAt(i) // ASCII-Wert des Zeichens
+    buckets[charCode].push(text[i]) // Zeichen in den entsprechenden Bucket legen
+  }
+
+  // Nun die Buckets sortieren und alle Zeichen wieder zusammenführen
+  let sortedText = ""
+  for (let i = 0; i < buckets.length; i++) {
+    if (buckets[i].length > 0) {
+      // Die Zeichen im aktuellen Bucket sortieren
+      buckets[i].sort()
+      sortedText += buckets[i].join("")
+    }
+  }
+
+  // LinkupExerciseHandler wird hier verwendet, um das Ergebnis an den DOM zu senden
+  linkupExerciseHandler("[data-click=BucketSort]", sortedText) // Hier wird das Ergebnis weitergegeben
+
+  return sortedText // Gibt den sortierten Text zurück (optional)
+}
+
+// Anwendung der Funktion
+linkupExerciseHandler(
+  "[data-click=BucketSort]",
+  BucketSort("einfach nur text..."),
+)
