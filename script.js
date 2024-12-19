@@ -228,19 +228,20 @@ export function aufgabe07(args) {
   const result = []
 
   for (let i = 0; i < input.length; i++) {
-    const currentElement = input[i]
-    //Prüfe ob das aktuelle Element ein u ist
+    const currentElement = input[i] // Das aktuelle Zeichen wird im Stringgespeichert
+    //Prüfe ob das aktuelle Element ein 'u' ist
     if (currentElement === "u") {
-      //Prüfe ob das nächste Element ein n ist
+      //Prüfe ob das nächste Element ein 'n' ist
       if (input[i + 1] === "n") {
-        //Prüfe ob das dritte Element ein d ist
+        //Prüfe ob das dritte Element ein 'd' ist
         if (input[i + 2] === "d") {
-          // das ist das richtige Element
+          // Wenn das Muster "und" gefunden wird, gib 'true' zurück
+
           return true
         }
       }
     }
-  }
+  } // Wenn das Muster "und" nicht gefunden wird, gib 'false' zurück
   return false
 }
 linkupExerciseHandler("[data-click=aufgabe07]", aufgabe07)
