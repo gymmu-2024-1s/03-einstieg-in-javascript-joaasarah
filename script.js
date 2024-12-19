@@ -136,26 +136,31 @@ export function aufgabe04(args) {
   }
   // Jetzt könnten wir noch mehrere Leerzeichen am Stück haben, die müssen wir noch filtern
 
+  // Jetzt haben wir alle Buchstaben und Leerzeichen, aber noch immer mehrere Leerzeichen hintereinander
   const result2 = []
+
+  // Wir filtern aufeinanderfolgende Leerzeichen aus, sodass nur ein einziges Leerzeichen bleibt
   for (let i = 0; i < result.length; i++) {
     const currentElement = result[i]
     const nextElement = result[i + 1]
 
+    // Wenn zwei Leerzeichen hintereinander sind, ignorieren wir das erste
     if (currentElement === " " && nextElement === " ") {
-      // hier sind 2 Leerzeichen hintereinander, wir ignorieren das erste
+      // nichts tun, nur das doppelte Leerzeichen überspringen
     } else {
       result2.push(currentElement)
     }
   }
-  // jetzt können wir die Leerzeichen zählen
+  // jetzt können wir die Leerzeichen zählen von der "bereinigten" Liste
   let count = 0
   for (let i = 0; i < result2.length; i++) {
     const currentElement = result2[i]
+    // Jedes Leerzeichen wird gezählt
     if (currentElement === " ") {
       count++
     }
   }
-  // da es ein wort mehr wie leerzeichen gibt, geben wie leerzeichen +1 zurück
+  // da es ein wort mehr gibt  als Leerzeichen gibt, geben wir die Anzahl Leerzeichen +1 zurück
   return count + 1
 }
 
