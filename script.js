@@ -201,23 +201,23 @@ export function aufgabe11(args) {
 linkupExerciseHandler("[data-click=aufgabe11]", aufgabe11)
 
 export function aufgabe06(args) {
-  const input = args
+  const input = args // Die Eingabe wird in der Variablen 'input' gespeichert
   const result = []
 
   let count = 0
   for (let i = 0; i < input.length; i++) {
-    const currentElement = input[i]
-    //Wandle in einen Grossbuchstaben um
+    const currentElement = input[i] // Das aktuelle Zeichen wird im String gespeichert
+    //Wandle das aktuelle Zeichen in einen Grossbuchstaben um
     const upperCaseVersion = currentElement.toUpperCase()
-    //Wandle in einen Kleinbuchstaben um
+    //Wandle das aktuelle Zeichen in einen Kleinbuchstaben um
     const lowerCaseVersion = currentElement.toLowerCase()
-    //Prüfe ob groß und klein gleich sind
+    // Prüfe, ob der Großbuchstabe und der Kleinbuchstabe des aktuellen Zeichens gleich sind
     if (upperCaseVersion === lowerCaseVersion) {
-      //gib true zurück
+      // Wenn das Zeichen weder Groß- noch Kleinbuchstabe ist (z.B. eine Zahl oder ein Sonderzeichen), gib 'true' zurück
       return true
     }
   }
-  //gib falsch zurück
+  // wenn kein solches Zeichen gefunden wurde, gib 'false' zurück
   return false
 }
 
