@@ -167,19 +167,20 @@ export function aufgabe04(args) {
 linkupExerciseHandler("[data-click=aufgabe04]", aufgabe04)
 
 export function aufgabe08(args) {
+  // Die Funktion 'aufgabe08' ersetzt alle Vorkommen des Buchstabens "e" im Eingabestring durch die Zahl "3"
   const input = args
-  const result = []
+  const result = [] // Hier speichern wir das Ergebnis
   for (let i = 0; i < input.length; i++) {
     const currentElement = input[i]
-
+    // Wenn das aktuelle Zeichen ein "e" ist, füge "3" in das Ergebnis-Liste  ein
     if (currentElement === "e") {
       // do nothing
-      result.push(3) // 3 ersetzt "e"
+      result.push(3) // Ersetze "e" durch "3"
     } else {
       result.push(currentElement)
     }
   }
-  return result.join("")
+  return result.join("") // Verbindet alle Elemente des Arrays (Liste) zu einem String
 }
 linkupExerciseHandler("[data-click=aufgabe08]", aufgabe08)
 
