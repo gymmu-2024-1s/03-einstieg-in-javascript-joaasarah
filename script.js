@@ -625,16 +625,21 @@ export function BubbleSort(args) {
   for (let i = 0; i < list.length - 1; i++) {
     const currentElement = list[i]
     const nextElement = list[i + 1]
+    // Vergleiche die ASCII-Werte der beiden benachbarten Zeichen
     if (currentElement.charCodeAt(0) > nextElement.charCodeAt(0)) {
+      // Wenn der ASCII-Wert des aktuellen Zeichens größer ist als der des nächsten
+
+      // müssen die beiden Zeichen vertauscht werden.
       // Reihenfolge stimmt nicht, Elemente müssen getauscht werden.
       const tmp = list[i + 1]
-      list[i + 1] = list[i]
+      list[i + 1] = list[i] // Tausche das aktuelle Element mit dem nächsten
       list[i] = tmp
+      // Wenn ein Tausch stattgefunden hat, starte die Schleife von vorne
       i = -1 // starte von vorne wenn etwas vertauscht wurde.
     }
   }
   const result = list.join("")
-  return result
+  return result // Gibt den sortierten String zurück
 }
 
 linkupExerciseHandler("[data-click=BubbleSort]", BubbleSort)
