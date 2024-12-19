@@ -316,23 +316,25 @@ export function aufgabe16(args) {
   //zweiter Teil enthält alle Zeichen nach dem ersten Dollarzeichen
   return [result1.join(""), result2.join("")]
 }
+//gibt uns das Zeichen zurück die wir gerade betrachten
 
 linkupExerciseHandler("[data-click=aufgabe16]", aufgabe16)
-
-//gibt uns das Zeichen zurück die wir gerade betrachten
 
 export function aufgabe13(args) {
   const input = args
   const result = []
 
-  let pos = -1
+  let pos = -1 //Die Variable 'pos' wird auf -1 gesetzt, um die Position des letzten 'e' zu speichern
   for (let i = 0; i < input.length; i++) {
-    const currentElement = input[i]
-    //Suche die Position des letzten `e`s in einem Text.
+    const currentElement = input[i] // Das aktuelle zeichen wird in der Resultatliste gesopeichert
+
+    //// Wenn das aktuelle Zeichen ein 'e' ist, speichere die Position
+
     if (currentElement === "e") {
-      pos = i
+      pos = i //Setze 'pos' auf die aktuelle Position des 'e'.
     }
   }
+  // Gib die Position des letzten 'e' zurück (falls gefunden), andernfalls bleibt pos auf -1.
   return pos
 }
 linkupExerciseHandler("[data-click=aufgabe13]", aufgabe13)
