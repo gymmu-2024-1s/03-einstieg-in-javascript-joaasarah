@@ -228,7 +228,7 @@ export function aufgabe07(args) {
   const result = []
 
   for (let i = 0; i < input.length; i++) {
-    const currentElement = input[i] // Das aktuelle Zeichen wird im Stringgespeichert
+    const currentElement = input[i] // Das aktuelle Zeichen wird im String gespeichert
     //Prüfe ob das aktuelle Element ein 'u' ist
     if (currentElement === "u") {
       //Prüfe ob das nächste Element ein 'n' ist
@@ -247,22 +247,22 @@ export function aufgabe07(args) {
 linkupExerciseHandler("[data-click=aufgabe07]", aufgabe07)
 
 export function aufgabe09(args) {
-  const input = args
+  const input = args // Die Eingabe wird als String (Zeichenkette) in der Variablen 'input' gespeichert
   const result = []
 
-  // Erstelle eine zählvariable
+  // Erstelle eine zählvariable 'count', um die Anzahl der Elemente zu zählen
   let count = 0
 
   for (let i = 0; i < input.length; i++) {
-    const currentElement = input[i]
-    // Zähle count um eins hoch
+    const currentElement = input[i] // Das aktuelle Zeichen wird gespeichert
+    // Zähle die Anzahl der Elemente, indem du count um eins erhöhst
     count = count + 1
   }
-  // Wenn count genau glaich 6 ist, dann gib wahr zurück
+  // Wenn count genau gleich 6 ist, dann gib wahr zurück
   if (count === 6) {
     return true
   }
-  // Gib falsch zurück
+  //  Wenn die Anzahl der Elemente nicht genau 6 ist, gib 'false'zurück
   return false
 }
 
