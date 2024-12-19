@@ -435,15 +435,20 @@ export function aufgabe24(args) {
   const result = []
 
   for (let i = 0; i < input.length; i++) {
-    const currentElement = input[i]
+    const currentElement = input[i] // Das aktuelle Zeichen wird in der Resultatliste gespeichert
+
+    // Wenn es das erste Zeichen ist, tausche es mit dem letzten Zeichen
     if (i === 0) {
-      result.push(input[input.length - 1])
+      result.push(input[input.length - 1]) // Das letzte Zeichen wird an den Anfang des 'result' Arrays ( liste ) eingefügt
+
+      // Wenn es das letzte Zeichen ist, tausche es mit dem ersten Zeichen
     } else if (i === input.length - 1) {
-      result.push(input[0])
+      result.push(input[0]) // Das erste Zeichen wird ans Ende der 'result' Liste eingefügt
     } else {
-      result.push(currentElement)
+      result.push(currentElement) // Das aktuelle Zeichen wird unverändert eingefügt
     }
   }
+  //gib das Ergebnis zurück als String
   return result.join("")
 }
 linkupExerciseHandler("[data-click=aufgabe24]", aufgabe24)
