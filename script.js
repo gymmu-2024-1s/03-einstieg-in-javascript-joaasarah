@@ -729,26 +729,27 @@ linkupExerciseHandler("[data-click=InsertionSort]", InsertionSort)
 export function BucketSort(args) {
   const text = args // Der Eingabetext
   const list = text.split("") // Den Text in eine Liste von Zeichen umwandeln
-  const buckets = [] // Array für die Buckets, um die Zeichen zu speichern
+  const buckets = []
 
-  // Erstelle 26 Buckets (einen für jeden Buchstaben im Alphabet)
+  // Erstelle 26 Buckets (einen für jeden Buchstaben
   for (let i = 0; i < 26; i++) {
     buckets.push([]) // Füge leere Buckets hinzu
   }
 
-  // Verteile jedes Zeichen in den entsprechenden Bucket
+  // Verteile jedes Zeichen in den entsprechenden Buckets (basierend auf ASCII-Wert)
   for (let i = 0; i < list.length; i++) {
     const currentElement = list[i] // Das aktuelle Zeichen
-    const bucketIndex = currentElement.charCodeAt(0) - 97 // Bestimme den Bucket-Index ('a' hat ASCII-Wert 97)
+    const bucketIndex = currentElement.charCodeAt(0) - 97 // Berechne den Index des Buckets anhand des ASCII-Werts
 
+    // Falls der Index im Bereich der 26 Buckets liegt
     if (bucketIndex >= 0 && bucketIndex < 26) {
       buckets[bucketIndex].push(currentElement) // Füge das Zeichen in den entsprechenden Bucket ein
     }
   }
 
-  // Sortiere jedes Bucket. Wir können die Array sort() Methode verwenden.
+  //Sortiere die Zeichen in jedem Bucket
   for (let i = 0; i < buckets.length; i++) {
-    buckets[i].sort() // Sortiere die Zeichen im aktuellen Bucket
+    buckets[i].sort() // Sortiere die Zeichen im aktuellen Bucket aphabetisch
   }
 
   // Kombiniere die sortierten Buckets zu einem endgültigen Ergebnis
