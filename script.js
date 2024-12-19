@@ -535,12 +535,14 @@ export function aufgabe26(args) {
   //Bitte erstelle eine neue Variable, die dass zweite Element speichert
   const secondElement = input[1]
 
-  // Wenn der ASCII-Wert des ersten Elements grösser ist als des zweiten, dann vertausche die Elemente
+  // Vergleiche die ASCII-Werte des ersten und zweiten Elements
   if (firstElement.charCodeAt(0) > secondElement.charCodeAt(0)) {
-    // vertausche die Elemente
+    // Wenn der ASCII-Wert des ersten Elements größer ist als der des zweiten,
+    // tausche die Positionen der beiden Elemente
     result.push(secondElement)
     result.push(firstElement)
   } else {
+    // Wenn der ASCII-Wert des ersten Elements kleiner oder gleich dem des zweiten ist, behalte die Reihenfolge der Elemente bei
     result.push(firstElement)
     result.push(secondElement)
   }
