@@ -291,23 +291,29 @@ linkupExerciseHandler("[data-click=aufgabe12]", aufgabe12)
 
 export function aufgabe16(args) {
   const input = args
-  const result1 = []
-  const result2 = []
-  let dollarFound = false
+  const result1 = [] // Liste, um die zeichen vor dem ersten Element zu speichern
+  const result2 = [] //Liste um die Zeichen nach dem ersten Element zu speichern
+  let dollarFound = false // gibt an ob ein Dollarzeichen bereits gefunden wurde
   //left dollar ist true
   //right dollar ist false
 
   for (let i = 0; i < input.length; i++) {
     const currentElement = input[i]
+    // Wenn noch kein Dollarzeichen gefunden wurde, speichere das Zeichen in 'result1'
     if (dollarFound === false) {
       result1.push(currentElement)
     } else {
+      // Wenn bereits ein Dollarzeichen gefunden wurde, speichere das Zeichen in 'result2'
+
       result2.push(currentElement)
     }
+    // Wenn das aktuelle Zeichen ein Dollarzeichen '$' ist, setze 'dollarFound' auf true
     if (currentElement === "$") {
       dollarFound = true
     }
   }
+  //erster Teil enthält alle Zeichen vor dem ersten Dollarzeichen
+  //zweiter Teil enthält alle Zeichen nach dem ersten Dollarzeichen
   return [result1.join(""), result2.join("")]
 }
 
