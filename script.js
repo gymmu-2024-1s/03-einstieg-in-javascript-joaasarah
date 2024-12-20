@@ -381,30 +381,6 @@ export function aufgabe10(args) {
 linkupExerciseHandler("[data-click=aufgabe10]", aufgabe10)
 
 export function aufgabe22(args) {
-  const input = args
-  const result = []
-
-  let toggle = false //Eine Variable 'toggle', die den Zustand wechselt (false -> '_', true -> Originalzeichen).
-
-  for (let i = 0; i < input.length; i++) {
-    const currentElement = input[i]
-
-    // Wenn 'toggle' false ist, füge ein '_' in die Resultatliste ein
-    if (toggle === false) {
-      result.push("_")
-    } else {
-      // Wenn 'toggle' true ist, füge das ursprüngliche Zeichen in die Resultatliste ein
-      result.push(currentElement)
-    }
-
-    // Wenn das aktuelle Zeichen ein 'k' ist, wechsle den Wert von 'toggle' (true)
-    if (currentElement === "k") {
-      toggle = true
-    }
-  }
-  return result.join("") //Alle Elemente der Resultatliste werdn zusammengefügt
-}
-linkupExerciseHandler("[data-click=aufgabe22]", aufgabe22)
 
 export function aufgabe23(args) {
   const input = args
