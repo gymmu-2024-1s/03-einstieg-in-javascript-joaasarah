@@ -150,3 +150,8 @@ Testen sie, ob eine Eingabe eine Zahl ist.
 
 Testen Sie, ob in der Eingabe 2 Zahlen von einem Leerzeichen getrennt sind.
 Falls ja geben Sie die Summe als Ausgabe aus; sonst Fehlermeldung.
+
+## Eigene Aufgabe 1
+
+Wandle jedes Zweite Zeichen in einen Großbuchstaben, falls es bereits einen
+Großbuchstaben gibt soll es gleich bleiben.
