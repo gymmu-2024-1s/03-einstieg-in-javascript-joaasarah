@@ -161,3 +161,5 @@ indem du ein F einfügst
 
 Lese jede Zahl und addiere sie am Ende zusammen. Gebe die Summe zurück. Falls
 keine Zahl vorhanden ist gebe s zurück.
+
+## Eigene Aufgabe 3
