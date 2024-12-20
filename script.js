@@ -384,21 +384,27 @@ export function aufgabe22(args) {
   const input = args
   const result = []
 
+  // Variable, um zu überprüfen, ob "k" gefunden wurde
   let kFound = false
 
+  // Schleife durch jedes Zeichen in der Eingabe
   for (let i = 0; i < input.length; i++) {
     const currentElement = input[i]
-    // Ersetze alle Zeichen aus der Eingabe mit `_` , bis zum ersten "k".
+    // Überprüfen, ob das aktuelle Zeichen "k" ist
     if (currentElement === "k") {
-      kFound = true
+      kFound = true // "k" gefunden, ab jetzt wird der Rest der Eingabe nicht mehr ersetzt
     }
 
+    // Wenn "k" noch nicht gefunden wurde, ersetze das Zeichen durch "_"
     if (kFound === false) {
+      // Ab dem ersten "k" beibehalten, was folgt
       result.push("_")
     } else {
+      // Ab dem ersten "k" beibehalten, was folgt
       result.push(currentElement)
     }
   }
+  // Ergebnis als String zurückgeben
   return result.join("")
 }
 linkupExerciseHandler("[data-click=aufgabe22]", aufgabe22)
