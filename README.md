@@ -163,3 +163,7 @@ Lese jede Zahl und addiere sie am Ende zusammen. Gebe die Summe zurück. Falls
 keine Zahl vorhanden ist gebe s zurück.
 
 ## Eigene Aufgabe 3
+
+Schreibe eine Funktion, die überprüft, ob ein text mindestens einen Buchstaben
+und eine Zahl enthält. Wenn beides vorhanden ist soll true zurückgegeben werden,
+andernfalls soll false zurückgegeben werden.
