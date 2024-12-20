@@ -381,6 +381,27 @@ export function aufgabe10(args) {
 linkupExerciseHandler("[data-click=aufgabe10]", aufgabe10)
 
 export function aufgabe22(args) {
+  const input = args
+  const result = []
+
+  let kFound = false
+
+  for (let i = 0; i < input.length; i++) {
+    const currentElement = input[i]
+    // Ersetze alle Zeichen aus der Eingabe mit `_` , bis zum ersten "k".
+    if (currentElement === "k") {
+      kFound = true
+    }
+
+    if (kFound === false) {
+      result.push("_")
+    } else {
+      result.push(currentElement)
+    }
+  }
+  return result.join("")
+}
+linkupExerciseHandler("[data-click=aufgabe22]", aufgabe22)
 
 export function aufgabe23(args) {
   const input = args
