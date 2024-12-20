@@ -836,6 +836,28 @@ export function eigeneAufgabe3(args) {
   let hasNumber = false //überprüft ob eine Zahl gefunden wurde
 
   for (let i = 0; i < input.length; i++) {
-    const currentChar = input[i] //Aktuelles Zeichen
+    const currentChar = input[i] // Aktuelles Zeichen
+    const ascii = currentChar.charCodeAt(0) // ASCII-Wert des aktuellen Zeichens
+
+    // Überprüfe, ob das Zeichen ein Buchstabe ist (A-Z oder a-z)
+    if ((ascii >= 65 && ascii <= 90) || (ascii >= 97 && ascii <= 122)) {
+      hasLetter = true
+    }
+
+    // Überprüfe, ob das Zeichen eine Zahl ist (0-9)
+    if (ascii >= 48 && ascii <= 57) {
+      hasNumber = true
+    }
+
+    // Falls beide Bedingungen erfüllt sind, kannst du die Schleife frühzeitig abbrechen
+    if (hasLetter && hasNumber) {
+      return true // Wenn beides gefunden wurde, gib true zurück
+    }
   }
+
+  // Wenn eines der beiden nicht gefunden wurde, gib false zurück
+  return false
 }
+
+// Event-Handler für die Aufgabe mit linkup
+linkupExerciseHandler("[data-click=eigeneAufgabe3]", eigeneAufgabe3)
