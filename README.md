@@ -154,4 +154,5 @@ Falls ja geben Sie die Summe als Ausgabe aus; sonst Fehlermeldung.
 ## Eigene Aufgabe 1
 
 Wandle jedes Zweite Zeichen in einen Großbuchstaben, falls es bereits einen
-Großbuchstaben gibt soll es gleich bleiben.
+Großbuchstaben gibt soll es gleich bleiben. Zähle das leerzeichen dabei mit,
+indem du ein F einfügst
