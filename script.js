@@ -829,3 +829,13 @@ export function eigeneAufgabe2(args) {
 }
 
 linkupExerciseHandler("[data-click=eigeneAufgabe2]", eigeneAufgabe2)
+
+export function eigeneAufgabe3(args) {
+  const input = args
+  let hasLetter = false //überprüft ob ein buchstabe gefunden wurde
+  let hasNumber = false //überprüft ob eine Zahl gefunden wurde
+
+  for (let i = 0; i < input.length; i++) {
+    const currentChar = input[i] //Aktuelles Zeichen
+  }
+}
