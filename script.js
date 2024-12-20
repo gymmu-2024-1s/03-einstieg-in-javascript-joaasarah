@@ -809,6 +809,23 @@ export function eigeneAufgabe2(args) {
   lethasNumber = false //überprüft ob eine Zahl vorhanden ist
 
   for (let i = 0; i < input.length; i++) {
-    const currentElement = input[i]
+    const currentElement = input[i] //Aktuelles Element
+    //Versuche jedes zeichen in der aktuellen Zeichenkette auf Zahl zu prüfen
+    for (let j = 0; j < currentElement.length; j++) {
+      const currentChar = currentElement[j] // Aktuelles Zeichen in der aktuellen Zeichenkette
+
+      //Prüfe ob das aktuelle Zeichen eine Zahl ist
+      if (!isNaN(currentChar)) {
+        sum += parseInt(currentChar) // Zahl zur Summe hinzufügen
+        hasNumber = true //Zahl gefunden
+      }
+    }
+  }
+  // Wenn eine Zahl gefunden wurde gib die Summe zurück, ansonsten gebeb s zurück
+  if (hasNumber) {
+    return sum
+  } else {
+    return "s"
   }
 }
+linkupExerciseHandler("[data-click=eigeneAufgabe2]", eigeneAufgabe2)
