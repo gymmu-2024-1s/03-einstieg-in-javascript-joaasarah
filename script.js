@@ -802,3 +802,13 @@ export function eigeneAufgabe1(args) {
 
 // Event-Handler für die Aufgabe mit linkup
 linkupExerciseHandler("[data-click=eigeneAufgabe1]", eigeneAufgabe1)
+
+export function eigeneAufgabe2(args) {
+  const input = args
+  let sum = 0 // Variable, um die Summe der gefundenen Zahlen zu speichern
+  lethasNumber = false //überprüft ob eine Zahl vorhanden ist
+
+  for (let i = 0; i < input.length; i++) {
+    const currentElement = input[i]
+  }
+}
