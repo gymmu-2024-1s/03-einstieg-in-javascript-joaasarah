@@ -766,3 +766,39 @@ export function BucketSort(args) {
 }
 
 linkupExerciseHandler("[data-click=BucketSort]", BucketSort)
+
+export function eigeneAufgabe1(args) {
+  const input = args // Der Eingabetext, z.B. "einfach text..."
+  const result = [] // Array für das Ergebnis
+  let count = 0 // Zähler für das zweite Zeichen
+
+  // Iteration über den gesamten Text
+  for (let i = 0; i < input.length; i++) {
+    const currentElement = input[i] // Aktuelles Zeichen
+
+    // Wenn das Zeichen ein Leerzeichen ist, ersetze es mit 'F' und zähle es
+    if (currentElement === " ") {
+      result.push("F")
+      count++ // Leerzeichen zählt auch
+    } else {
+      // Überprüfe, ob es sich um das zweite Zeichen handelt
+      if (count % 2 !== 0) {
+        // Wenn es noch kein Großbuchstabe ist, wandle es um
+        if (currentElement !== currentElement.toUpperCase()) {
+          result.push(currentElement.toUpperCase())
+        } else {
+          result.push(currentElement) // Wenn es bereits ein Großbuchstabe ist, bleibt es gleich
+        }
+      } else {
+        result.push(currentElement) // Andernfalls bleibt das Zeichen unverändert
+      }
+      count++ // Zähler erhöhen
+    }
+  }
+
+  // Gib das Ergebnis als einen zusammengefügten String zurück
+  return result.join("")
+}
+
+// Event-Handler für die Aufgabe mit linkup
+linkupExerciseHandler("[data-click=eigeneAufgabe1]", eigeneAufgabe1)
