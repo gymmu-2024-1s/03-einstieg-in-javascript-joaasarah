@@ -849,7 +849,7 @@ export function eigeneAufgabe3(args) {
       hasNumber = true
     }
 
-    // Falls beide Bedingungen erfüllt sind, kannst du die Schleife frühzeitig abbrechen
+    // Falls beide Bedingungen erfüllt sind, kann die Schleife beendet werden
     if (hasLetter && hasNumber) {
       return true // Wenn beides gefunden wurde, gib true zurück
     }
