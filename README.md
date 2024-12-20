@@ -156,3 +156,8 @@ Falls ja geben Sie die Summe als Ausgabe aus; sonst Fehlermeldung.
 Wandle jedes Zweite Zeichen in einen Großbuchstaben, falls es bereits einen
 Großbuchstaben gibt soll es gleich bleiben. Zähle das leerzeichen dabei mit,
 indem du ein F einfügst
+
+## Eigene Aufgabe 2
+
+Lese jede Zahl und addiere sie am Ende zusammen. Gebe die Summe zurück. Falls
+keine Zahl vorhanden ist gebe s zurück.
